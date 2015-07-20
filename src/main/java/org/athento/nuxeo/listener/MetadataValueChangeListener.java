@@ -283,7 +283,9 @@ public class MetadataValueChangeListener implements EventListener {
 	private String toString(Object o, Locale locale) {
 		StringBuilder sb = new StringBuilder();
 		if (o == null) {
-			return String.valueOf(" ");
+			return I18NUtils.getMessageString(
+				MetadataValueChangeListener.BUNDLE_NAME, "label.no.value",
+				null, locale);
 		}
 		if ((o instanceof String)) {
 			return (String)o;
